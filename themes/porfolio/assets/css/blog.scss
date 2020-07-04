@@ -1,0 +1,102 @@
+@import './variables';
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+.blog{
+    background: #ffffff;
+    padding: 75px 0px 50px 0px;
+    color: #3F3F3F;
+    .title{
+        text-align: center;
+        h1{
+            font-family: 'Work Sans', sans-serif;
+            font-weight: 700;
+            border-bottom: 5px solid $primaryBtn;
+            display: inline;
+        }
+    }
+    .card{
+        border-radius: 15px;
+        font-family: 'Ubuntu', sans-serif;
+        box-shadow: 0px 0px 25px -9px rgba(0,0,0,0.5);
+        transition: 0.3s ease;
+        &:hover{
+            transform: scale(1.02);
+        }
+        .card-title{
+            font-weight: 600;
+        }
+        .featured-images{
+            p{
+                img{
+                    height: auto;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.blog-single{
+    background: #DDE1E7;
+    font-family: 'Ubuntu', sans-serif;
+    color: #3F3F3F;
+    .container{
+        padding: 75px 0px 50px 0px;
+        background: #ffffff;
+        .title{
+            font-weight: 800;
+        }
+        .info{
+            font-style: italic;
+        }
+        .featured-images{
+            p{
+                img{
+                    border-radius: 10px;
+                    height: 400px;
+                    width: auto;
+                }
+            }
+        }
+        .content{
+            p{
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+    .blog-single{
+        .container{
+            .featured-images{
+                p{
+                    img{
+                        height: auto !important;
+                        width: 100% !important;
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
+    
+}
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) {
+    
+}

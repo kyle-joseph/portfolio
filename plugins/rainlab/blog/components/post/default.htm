@@ -1,0 +1,29 @@
+{% set post = __SELF__.post %}
+
+<div class="container-fluid blog-single">
+    <div class="container px-3 px-md-5">
+        <h1 class="title text-center mb-3">{{ post.title }}</h1>
+        <h5 class="info text-center mb-4">
+            Posted
+            {% if post.categories.count %} in
+            {% for category in post.categories %}
+            <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+            {% endfor %}
+            {% endif %}
+            on {{ post.published_at|date('M d, Y') }}
+        </h5>
+        {% if post.featured_images.count %}
+        <div class="featured-images text-center mb-4">
+            {% for image in post.featured_images %}
+            <p>
+                <img data-src="{{ image.filename }}" src="{{ image.path }}" alt="{{ image.description }}"
+                    style="max-width: 100%" />
+            </p>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <div class="content">
+            {{ post.content_html|raw }}
+        </div>
+    </div>
+</div>

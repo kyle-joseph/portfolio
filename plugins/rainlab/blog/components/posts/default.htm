@@ -1,0 +1,71 @@
+{% set posts = __SELF__.posts %}
+
+<div class="container-fluid blog">
+    <div class="container">
+        <div class="title">
+            <h1>Blog</h1>
+        </div>
+        <div class="container mt-4">
+            <div class="row">
+                {% for post in posts %}
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            {% if post.featured_images.count %}
+                            <div class="featured-images text-center">
+                                {% for image in post.featured_images %}
+                                <p>
+                                    <img data-src="{{ image.filename }}" src="{{ image.path }}"
+                                        alt="{{ image.description }}" />
+                                </p>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                            <h3 class="card-title text-center">{{ post.title }}</h3>
+                            <p class="info card-text text-center">
+                                Posted
+                                {% if post.categories.count %} in {% endif %}
+                                {% for category in post.categories %}
+                                <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+                                {% endfor %}
+                                on {{ post.published_at|date('M d, Y') }}
+                            </p>
+                            <p class="excerpt card-text">{{ str_limit(post.summary|raw, 160) }}<a href="{{ post.url }}">
+                                    [More]</a></a></p>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                <p class="no-data">{{ __SELF__.noPostsMessage }}</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="paginate text-center mt-4 d-flex justify-content-center">
+            {% if posts.lastPage > 1 %}
+            <ul class="pagination">
+                {% if posts.currentPage > 1 %}
+                <li class="page-item"><a class="page-link"
+                        href="{{ this.page.baseFileName|page({ (__SELF__.pageParam): (posts.currentPage-1) }) }}">
+                        Prev</a>
+                </li>
+                {% endif %}
+
+                {% for page in 1..posts.lastPage %}
+                <li class="page-item {{ posts.currentPage == page ? 'active' : null }}">
+                    <a class="page-link"
+                        href="{{ this.page.baseFileName|page({ (__SELF__.pageParam): page }) }}">{{ page }}</a>
+                </li>
+                {% endfor %}
+
+                {% if posts.lastPage > posts.currentPage %}
+                <li class="page-item"><a class="page-link"
+                        href="{{ this.page.baseFileName|page({ (__SELF__.pageParam): (posts.currentPage+1) }) }}">Next
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+</div>

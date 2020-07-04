@@ -1,0 +1,531 @@
+@import './variables';
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+html{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    
+}
+html {
+    min-height: 100%;
+    position: relative;
+    body {
+      margin-bottom: 130px;
+    }
+    .footer {
+        position: absolute;
+            background: #3F3F3F;
+            height: 130px;
+            width: 100%;
+            bottom: 0;
+            a{
+                font-size: 25px;
+                text-decoration: none;
+                color: #ffffff;
+                &:focus{
+                    color: #ffffff;
+                    outline: none;
+                }
+                .fa{
+                    &:focus{
+                        color: #ffffff;
+                        outline: none;
+                    }
+                }
+            }
+    }
+  }
+body{
+    min-width: 240px;
+}
+.container-fluid{
+    padding: 0;
+}
+.container{
+    padding: 0;
+}
+.navGap{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 63px;
+    width: 100%;
+    background:transparent;
+    z-index: -1;
+}
+.active{
+    color: $primaryBtn !important;
+}
+.nav-small{
+    background: $navBar !important;
+}
+.branding{
+    font-size: 25px !important;
+}
+.dark{
+    background: #212529 !important;
+}
+.dark-brand{
+    font-size: 25px !important;
+}
+.navbar{
+    min-width: 240px;
+    transition: 0.5s all ease;
+    background: transparent;
+    .navbar-brand{
+        font-family: 'Kaushan Script', cursive;
+        color: $primaryBtn;
+        font-size: 45px;
+        transition: 0.3s all ease;
+    }
+    .navbar-toggler{
+        outline: none;   
+        padding: 0px;     
+    }
+    .bi-filter-right{
+        color: #ffffff;
+        height: 35px;
+        width: auto;
+        transition: 0.2s;
+        padding: 0px;
+        &:hover{
+            opacity: 0.8;
+        }
+    }
+    .bi-x{
+        display: none;
+        color: #ffffff;
+        height: 35px;
+        width: auto;
+        transition: 0.2s;
+        &:hover{
+            opacity: 0.8;
+        }
+    }
+    .nav-item a{
+        color: #ffffff;
+        font-size: 17px;
+        font-family: 'Josefin Sans', sans-serif;
+        text-transform: uppercase;
+        transition: 0.3s ease;
+        @include flexCenter();
+        &:hover{
+            color: $primaryBtn;
+        }
+    }
+
+}
+
+.home{
+    background: #F1F2F6;
+    position: relative;
+    .container-fluid{
+        overflow: hidden;
+        width: 100%;
+        min-height: 400px;
+        height: 600px;
+        background: linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/keyboard10.JPG');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%);
+        padding: 75px 0px 0px 0px;
+        .container{
+            height: 100%;
+            .row{
+                height: 100%;
+                .desc{
+                    height: 80%;
+                    .description{
+                        font-family: Arial, Helvetica, sans-serif;
+                        color: #ffffff;
+                        h2{
+                            font-size: 45px;
+                            font-weight: 760;
+                            text-transform: uppercase;
+                            span.typed-text{
+                                color: #ffffff;
+                            }
+                            span.cursor{
+                                display: inline-block;
+                                background-color: #ffffff;
+                                margin-left: 0.1rem;
+                                width: 3px;
+                                animation: blink 1s infinite;
+                            }
+                        }
+                        h5{
+                            font-size: 22px;
+                        }
+                        .bi-arrow-down-circle{
+                            color: #ffffff;
+                            height: 45px;
+                            width: auto;
+                            border-radius: 50%;
+                            transition: 0.3s ease;
+                            animation: shrinkGrow 1.2s infinite ease;
+
+                            &:hover{
+                                background-color: $primaryBtn;
+                            }
+                        }
+                    }
+                }
+
+                .img{
+                    height: 95%;
+                    .image{
+                        height: 100%;
+                        width: 100%;
+                        img{
+                            width: 350px;
+                            height: auto;
+                            margin-top: 80px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.about{
+    position: relative;
+    background: #F1F2F6;
+    .container-fluid{
+        .container{
+            color: #3F3F3F;
+            .title{
+                padding: 30px 0px 0px 0px;
+                text-align: center;
+                h1{
+                    font-family: 'Work Sans', sans-serif;
+                    font-weight: 700;
+                    border-bottom: 5px solid $primaryBtn;
+                    display: inline;
+                }
+            }
+            .row{
+                padding: 50px 0px 60px 0px;
+                .img{
+                    .image{
+                        height: 400px;
+                        width: 400px;
+                        background: url('../images/kyle.jpg');
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: top center;
+                        border-radius: 15px;
+                        box-shadow: -6px -6px 15px rgba(255,255,255,1), 6px 6px 15px rgba(0,0,0,0.2);
+                    }
+                }
+                .desc{
+                    .description{
+                        width: 100%;
+                        font-family: 'Ubuntu', sans-serif;
+                        h1{
+                            font-size: 38px;
+                            font-weight: 700;
+                            margin: 0px 0px 20px 0px;
+                        }
+                        p{
+                            font-size: 23px;
+                            line-height: 35px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.contact{
+    position: relative;
+    background: #F1F2F6;
+    .container-fluid{
+        .title{
+            background: linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/keyboard9.JPG');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-attachment: fixed;
+            color: #ffffff;
+            text-align: center;
+            h1{
+                display: inline;
+                font-family: 'Work Sans', sans-serif;
+                font-weight: 700;
+                border-bottom: 5px solid $primaryBtn;
+            }
+        }
+        .container{
+            height: 100%;
+            .row{
+                font-family: 'Josefin Sans', sans-serif;
+                font-weight: 600;
+                background: #ffffff;
+                box-shadow: 6px 6px 15px rgba(0,0,0,0.2);
+                .side-contact{
+                    height: 100%;
+                    width: 100%;
+                    background: #0078B9;
+                    color: #ffffff;
+                    text-align: center;
+                    h1{
+                        font-weight: 800;
+                    }
+                    .bi-envelope{
+                        margin: 0 auto;
+                        color: #ffffff;
+                        height: 90px;
+                        width: auto;
+                    }
+                    p{
+                        font-weight: 400;
+                        font-size: 20px;
+                    }
+                }
+                .textField[type=text]{
+                    height: 45px;
+                    padding: 10px;
+                    background: #ffffff;
+                    font-size: 18px;
+                    border: 1px solid #3F3F3F;
+                    box-shadow: none;
+                    &:focus{
+                        outline: none;
+                        border: 1px solid #0078B9;
+                    }
+                    
+                }
+                textarea{
+                    height: 140px;
+                    padding: 10px;
+                    background: #ffffff;
+                    font-size: 18px;
+                    border: 1px solid #3F3F3F;
+                    box-shadow: none;
+                    &:focus{
+                        outline: none;
+                        border: 1px solid #0078B9;
+                    }
+                    
+                }
+                .btnContact[type=submit]{
+                    float: right;
+                    opacity: 0.9;
+                    color: #3F3F3F;
+                    font-family: 'Work Sans', sans-serif;
+                    font-size: 17px;
+                    font-weight: 600;
+                    background-color: $primaryBtn;
+                    outline: none;
+                    box-shadow: none;
+                    padding: 7px 25px;
+                    &:hover{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Animations
+@keyframes shrinkGrow {
+    0% { transform: scale(1); }
+    30% { transform: scale(1); }
+    40% { transform: scale(1.08); }
+    50% { transform: scale(1); }
+    60% { transform: scale(1); }
+    70% { transform: scale(1.05); }
+    80% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes blink {
+    0%  { background-color: #ffffff; }
+    49% { background-color: #ffffff; }
+    50% { background-color: transparent; }
+    99% { background-color: transparent; }
+    100%  { background-color: #ffffff; }
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+    .container{
+        padding: 0px 15px 0px 15px;
+    }
+    .home{
+        .container-fluid{
+            // height: 450px;
+            height: 90vh;
+            .container{
+                .row{
+                    .desc{
+                        .description{
+                            text-align: center;
+                            h2{
+                                font-size: 40px !important;
+                            }
+                            h5{
+                                font-size: 19px !important;
+                            }
+                            .bi-arrow-down-circle{
+                            }
+                        }
+                    }
+    
+                    .img{
+                        .image{
+                            img{
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .about{
+        .container-fluid{
+            .container{
+                .title{
+                }
+                .row{
+                    padding-bottom: 40px;
+                    .img{
+                        .image{
+                        }
+                    }
+                    .desc{
+                        .description{
+                            h1{
+                                font-size: 30px !important;
+                            }
+                            p{
+                                font-size: 20px !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) { 
+    .navbar{
+        background: $navBar;
+        .navbar-brand{
+            font-size: 25px;
+        }
+    }
+    .home{
+        .container-fluid{
+            .container{
+                .row{
+                    .desc{
+                        .description{
+                            text-align: center;
+                            h2{
+                                font-size: 55px;
+                            }
+                            h5{
+                                font-size: 24px;
+                            }
+                            .bi-arrow-down-circle{
+
+                            }
+                        }
+                    }
+    
+                    .img{
+                        .image{
+                            img{
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .about{
+        .container-fluid{
+            .container{
+                .title{
+                }
+                .row{
+                    .img{
+                        .image{
+                            height: 370px;
+                            width: 100%;
+                            margin: 0px 0px 30px 0px;
+                        }
+                    }
+                    .desc{
+                        .description{
+                            h1{
+                                font-size: 35px;
+                                text-align: center;
+                                margin: 0px 0px 20px 0px;
+                            }
+                            p{
+                                font-size: 22px;
+                                line-height: 33px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
+    .about{
+        .container-fluid{
+            .container{
+                .title{
+                }
+                .row{
+                    .img{
+                        .image{
+                        }
+                    }
+                    .desc{
+                        .description{
+                            h1{
+                                margin: 0px 0px 15px 0px;
+                            }
+                            p{
+                                font-size: 21px ;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) { }

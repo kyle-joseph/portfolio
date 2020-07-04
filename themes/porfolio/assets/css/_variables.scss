@@ -1,0 +1,8 @@
+$primaryBtn: #F1C300;
+$navBar: #212529;
+
+@mixin flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
