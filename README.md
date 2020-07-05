@@ -1,1 +1,1 @@
-# This is my personal website using October CMS
+My personal website using October CMS
